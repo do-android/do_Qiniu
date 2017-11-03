@@ -1,0 +1,158 @@
+{
+  "ID": "do_Qiniu",
+  "IsContainer": "0",
+  "Type": "SM",
+  "UIType": "Layout",
+  "Name": "七牛云存储",
+  "Version": "Internal",
+  "Description": "七牛云自主研发的分布式对象存储服务，提供高可靠、强安全、低成本、可扩展的存储服务，满足各类存储需求",
+  "Icon": "",
+  "BBS": "",
+  "Keyword": "七牛云",
+  "IOS": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Android": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Windows": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "WindowsPhone": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Html": {
+    "Support": 1,
+    "MinVersion": "5.0"
+  },
+  "Properties": [],
+  "Events": [
+    {
+      "ID": "progress",
+      "Description": "响应进度事件",
+      "ReturnType": "Node",
+      "ReturnType_JavaScript": "Node",
+      "ReturnDesc": "返回值包含两个节点{currentSize:'1221',totalSize:'23234245'}单位为kB",
+      "Deprecated": false
+    }
+  ],
+  "syncMethodes": [],
+  "asyncMethodes": [
+    {
+      "ID": "download",
+      "Name": "从七牛云下载文件",
+      "Description": "文件下载是一个标准的 HTTP GET 过程，如果从公开空间下载文件不需要提供用户凭证和签名密钥，私有空间则必须提供",
+      "ReturnType": "Bool",
+      "ReturnType_JavaScript": "Bool",
+      "ReturnDesc": "下载成功返回true，下载失败返回false",
+      "Paras": [
+        {
+          "ID": "domainName",
+          "Name": "要下载的文件所在存储空间的外链域名",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        },
+        {
+          "ID": "fileName",
+          "Name": "要下载的文件名称",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "",
+          "Deprecated": false
+        },
+        {
+          "ID": "accessKey",
+          "Name": "用户凭证",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "用户凭证是七牛云存储颁发给用户的标识。用户将用户凭证放入访问请求，以便七牛云存储识别访问者的身份",
+          "Deprecated": false
+        },
+        {
+          "ID": "secretKey",
+          "Name": "签名密钥",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "是七牛云存储颁发给用户，用于对访问请求签名的字串。用户使用签名密钥对访问请求的核心要素进行签名，获得请求认证令牌。用户将令牌随同访问请求一起发送至七牛云存储服务，七牛云存储将对令牌进行校验，以确认用户请求的合法性",
+          "Deprecated": false
+        }
+      ],
+      "Deprecated": false
+    },
+    {
+      "ID": "upload",
+      "Name": "上传文件",
+      "Description": "根据用户的accessKey,secretKey以及bucket(七牛存储空间名称)，生成uploadToken，然后根据uploadToken上传文件",
+      "ReturnType": "Bool",
+      "ReturnType_JavaScript": "Bool",
+      "ReturnDesc": "上传成功返回true,否则返回false",
+      "Paras": [
+        {
+          "ID": "filePath",
+          "Name": "要上传的文件路径",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "支持data://、source://目录文件",
+          "Deprecated": false
+        },
+        {
+          "ID": "accessKey",
+          "Name": "用户凭证",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "用户凭证是七牛云存储颁发给用户的标识。用户将用户凭证放入访问请求，以便七牛云存储识别访问者的身份",
+          "Deprecated": false
+        },
+        {
+          "ID": "secretKey",
+          "Name": "签名密钥",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "是七牛云存储颁发给用户，用于对访问请求签名的字串。用户使用签名密钥对访问请求的核心要素进行签名，获得请求认证令牌。用户将令牌随同访问请求一起发送至七牛云存储服务，七牛云存储将对令牌进行校验，以确认用户请求的合法性",
+          "Deprecated": false
+        },
+        {
+          "ID": "bucket",
+          "Name": "七牛存储空间名称",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 1,
+          "DefaultValue": "",
+          "Description": "存储空间可以有多个,根据名称存储到对应的存储空间里面",
+          "Deprecated": false
+        },
+        {
+          "ID": "saveName",
+          "Name": "上传后的文件名称",
+          "Type": "String",
+          "Type_JavaScript": "String",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": "文件上传到七牛云之后要保存的名称，也就是在七牛云存储里面显示的名称，缺省为原文件名",
+          "Deprecated": false
+        }
+      ],
+      "Deprecated": false
+    }
+  ]
+}

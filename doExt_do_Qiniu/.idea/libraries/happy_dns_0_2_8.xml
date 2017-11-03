@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="happy-dns-0.2.8">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/do_Qiniu/libs/happy-dns-0.2.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

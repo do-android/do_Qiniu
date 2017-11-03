@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="docore">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/do_Qiniu/libs/docore.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
